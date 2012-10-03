@@ -1,7 +1,9 @@
 # AMULet - Aos MinUs Los computation #
-Auteur	:	Jerome Gasperi
-Email   : jerome.gasperi@gmail.com
-Date		:	2012.09.02
+Auteur : Jerome Gasperi
+
+Email : jerome.gasperi@gmail.com
+
+Date : 2012.09.02
 
 # Installation #
 Unzip to any directory
