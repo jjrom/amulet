@@ -171,7 +171,7 @@ function parse(txt, start) {
         if (cols[2] && cols[2] !== "-") {
             aosd = cols[2].split("/");
             aost = cols[3].split(":");
-            aos = new Date(parseInt(aosd[2],10), parseInt(aosd[1],10), parseInt(aosd[0],10), parseInt(aost[0],10), parseInt(aost[1],10), parseFloat(aost[2]));
+            aos = new Date(aosd[2]+'-'+aosd[1]+'-'+aosd[0]+'T'+aost[0]+':'+aost[1]+':'+aost[2]);
         }
         else {
             aos = null;
@@ -179,7 +179,7 @@ function parse(txt, start) {
         if (cols[6] && cols[6] !== "-") {
             losd = cols[6].split("/");
             lost = cols[7].split(":");
-            los = new Date(parseInt(losd[2],10), parseInt(losd[1],10), parseInt(losd[0],10), parseInt(lost[0],10), parseInt(lost[1],10), parseFloat(lost[2]));
+            los = new Date(losd[2]+'-'+losd[1]+'-'+losd[0]+'T'+lost[0]+':'+lost[1]+':'+lost[2]);
         }
         else {
             los = null;
@@ -243,7 +243,7 @@ function display() {
                     if (station.aos && pStation.los) {
                         delta = 'AOS[' + i + ']&nbsp;-&nbsp;LOS[' + j + ']';
                         deltam = ((station.aos - pStation.los) / 1000 / 60).toFixed(2);
-                        deltah = (deltam / 24).toFixed(3);
+                        deltah = (deltam / 60).toFixed(3);
                         break;
                     }
                 }
